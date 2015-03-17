@@ -16,9 +16,11 @@ You need Python installed and pip, then just run :
 
 and to execute the tests : 
 
-```nosetests```
+```
+nosetests
+```
 
 Source code convention
 ----------------------
 
-Default indendation is *4 spaces* no tabs.
+Default indendation is **4 spaces** no tabs.
