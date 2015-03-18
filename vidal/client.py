@@ -1,4 +1,5 @@
 import requests
+import feedparser
 from urllib.parse import urlencode
 
 class QueryPart:
@@ -35,8 +36,11 @@ class VidalClient:
         return requests.get(self.server_url).status_code == 200
 
     def _get(self, url):
-        print(url)
-        return requests.get(url)
+        response = requests.get(url)
+        if response.status_code == 200:
+            return feedparser.parse(response.content)
+        else:
+            raise Exception("Bad response from server", response)
 
     def __getattr__(self, name):
         return QueryPart(self, "/".join([self.server_url, VidalClient.REST_PREFIX, str(name)]))

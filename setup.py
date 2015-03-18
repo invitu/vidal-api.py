@@ -8,7 +8,7 @@ setup(name='vidal-api.py',
       author_email='software@vidal.fr',
       url='https://github.com/softwarevidal/vidal-api.py'
       packages=['vidal'],
-      install_requires=['requests'],
+      install_requires=['requests', "feedparser"],
       classifiers=[
           'Development Status :: 3 - Alpha',
           'Intended Audience :: Developers',
