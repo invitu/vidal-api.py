@@ -15,7 +15,7 @@ Just create client with your VIDAL Credentials :
 
 ```
 >>> from vidal.client import VidalClient
->>> client = VidalClient(api_key = "mu_api_key")
+>>> client = VidalClient(api_key = "my_api_key")
 ```
 
 And you can use any kind of API chaining your commands *lazyli* and then call an http verb method like **get()** to trigger the API call.
