@@ -1,5 +1,8 @@
 vidal-api.py
 ============
+## Build status
+
+[![Build Status](https://travis-ci.org/softwarevidal/vidal-api.py.svg)](https://travis-ci.org/softwarevidal/vidal-api.py)
 
 How to install
 --------------
