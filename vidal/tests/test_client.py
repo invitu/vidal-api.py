@@ -26,5 +26,20 @@ class AuthentificationTest(unittest.TestCase):
 
         self.assertFalse(self.client.is_authenticated())
 
+
+class ChainedCommandTest(unittest.TestCase):
+
+    def setUp(self):
+        self.client = client.VidalClient(api_key = "")
+
+    @responses.activate
+    def test_chained_command_get(self):
+        responses.add(responses.GET, 'http://api.vidal.fr/rest/api/product/94930/packages', status=200)
+
+        result = self.client.product(94930).packages.get()
+        self.assertTrue(result is not None)
+
+
+
 if __name__ == '__main__':
     unittest.main()
