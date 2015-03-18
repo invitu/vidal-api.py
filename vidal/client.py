@@ -1,4 +1,5 @@
 import requests
+from urllib.parse import urlencode
 
 class QueryPart:
 
@@ -6,10 +7,11 @@ class QueryPart:
         self.client = client
         self.url_part = url_part
 
-    def get(self):
-        return self.client._get(self.url_part)
+    def get(self, **kwargs):
+        url = "".join([self.url_part, "?", urlencode(kwargs)]) if kwargs else self.url_part
+        return self.client._get(url)
     
-    def __call__(self, name, q = None):
+    def __call__(self, name):
         return self._createPath(name)
     
     def __getattr__(self, name):

@@ -24,6 +24,12 @@ Example :
 ```
 # this will call "http://api.vidal.fr/rest/api/product/94930/packages" with a GET verb.
 >>> client.product(94930).packages.get()
+
+# search example :
+>>> client.products.get(q = "amox")
+
+# or any kind of get parameters :
+>>> client.product(94930).packages.get(aggregates = "product")
 ```
 
 Setting up dev environment

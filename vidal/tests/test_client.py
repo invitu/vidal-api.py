@@ -39,6 +39,12 @@ class ChainedCommandTest(unittest.TestCase):
         result = self.client.product(94930).packages.get()
         self.assertTrue(result is not None)
 
+    @responses.activate
+    def test_chained_command_search(self):
+        responses.add(responses.GET, 'http://api.vidal.fr/rest/api/products', status=200)
+
+        result = self.client.products.get(q = "amoxyiciline")
+        self.assertTrue(result is not None)
 
 
 if __name__ == '__main__':
