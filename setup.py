@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(name='vidal-api.py',
       version='0.0.0',
-:x
+      description="VIDAL REST API - SDK for api.vidal.fr",
       long_description=description,
-      author='Software VIDAL'
+      author='Software VIDAL',
       author_email='software@vidal.fr',
-      url='https://github.com/softwarevidal/vidal-api.py'
+      url='https://github.com/softwarevidal/vidal-api.py',
       packages=['vidal'],
       install_requires=['requests', "feedparser"],
       classifiers=[
