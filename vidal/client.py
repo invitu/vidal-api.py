@@ -2,7 +2,13 @@
 # -*- coding: utf-8 -*-
 import requests
 import feedparser
-from urllib.parse import urlencode
+
+try:
+    # python 3
+    from urllib.parse import urlencode
+except:
+    # python 2
+    from urllib import urlencode
 
 class QueryPart:
 
