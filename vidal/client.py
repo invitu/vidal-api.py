@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import requests
 import feedparser
 from urllib.parse import urlencode
@@ -25,8 +27,9 @@ class QueryPart:
 class VidalClient:
     REST_PREFIX = "rest/api"
 
-    def __init__(self, api_key, server_url = "http://api.vidal.fr"):
-        self.api_key = api_key
+    def __init__(self, app_id, app_key, server_url = "http://api.vidal.fr"):
+        self.app_id = app_id
+        self.app_key = app_key
         self.server_url = server_url
 
     def is_authenticated(self):

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import unittest
 import responses
 
@@ -6,7 +8,7 @@ from vidal import client
 class AuthentificationTest(unittest.TestCase):
 
     def setUp(self):
-        self.client = client.VidalClient(api_key = "")
+        self.client = client.VidalClient(app_id = "", app_key="")
 
     @responses.activate
     def test_auth_forbidden(self):
@@ -30,7 +32,7 @@ class AuthentificationTest(unittest.TestCase):
 class ChainedCommandTest(unittest.TestCase):
 
     def setUp(self):
-        self.client = client.VidalClient(api_key = "")
+        self.client = client.VidalClient(app_id = "", app_key="")
 
     @responses.activate
     def test_chained_command_get(self):
